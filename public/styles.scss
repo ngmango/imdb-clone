@@ -1,0 +1,17 @@
+$primaryColor: lightgrey;
+$font-stack:    Helvetica, sans-serif;
+$textColor1: chartreuse;
+$textColor2: orangered;
+body {
+    font: $font-stack;
+    background: $primaryColor;
+    color: $textColor1;
+}
+
+div {
+    h4{
+        color:$textColor2;
+    }
+}
+
+

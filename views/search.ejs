@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">        
+    </head>
+
+    <body>
+
+        
+
+
+        <div class="container">
+            <h1 class="text-center">Movie Database</h1>
+
+            <div>
+
+                <form action='/search' method='GET' align="center">
+                    <input type='text' name="movieTitle">
+                    <input type="submit">
+                    
+                </form>
+            </div>
+
+            <% for (let i=0; i <movy.length; i++){  %>
+
+            <a class="movie-link" href=<%= '/movie/' +movy[i].id  %>>
+            <div class="media movie-list-item">
+                <div class="media-left">
+                    <div class="poster-container">
+                        <img class="media-object movie-poster" src=<%= movy[i].poster %> />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%= movy[i].title %>
+                        <span class="badge"><%= movy[i].imdbRating %></span>
+                    </h4>
+                    <div>
+                        <%= movy[i].plot %>
+                    </div>
+                    <div class="released-date">
+                        Released: <%= movy[i].released %>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <% } %>
+            <div class="row" align='center'>
+                <div class=buttons>
+                    <a class="btn btn-primary" href=<%= '/' %>>Back</a>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
